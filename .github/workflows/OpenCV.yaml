@@ -150,20 +150,13 @@ jobs:
         cp third_party/brotli/LICENSE prefix/bin/LICENSE.brotli
         cp LICENSE prefix/bin/LICENSE.libjxl
 
-- name: Compile OpenCV ${{ matrix.triplet }}
-  shell: bash
-  run: |
-    # Clone the specified branch of the OpenCV repository
-    git clone --depth=1 --branch=avif_cmake https://github.com/sturkmen72/opencv.git
-    
-    # Create a build directory
-    mkdir build-opencv
-
-    # Add libjxl paths to the PATH environment variable
-    export PATH=$PATH:/d/a/libjxl/libjxl/prefix:/d/a/libjxl/libjxl/prefix/bin:/d/a/libjxl/libjxl/prefix/lib
-
-    # Run CMake to configure the OpenCV build
-    cmake -B build-opencv \
+    - name: Compile OpenCV ${{ matrix.triplet }}
+      shell: bash
+      run: |
+        git clone --depth=1 --branch=avif_cmake https://github.com/sturkmen72/opencv.git
+        mkdir build-opencv
+        export PATH=$PATH:/d/a/libjxl/libjxl/prefix:/d/a/libjxl/libjxl/prefix/bin:/d/a/libjxl/libjxl/prefix/lib
+        cmake -B build-opencv \
           -DWITH_JPEGXL=ON \
           -DWITH_ZLIB_NG=OFF \
           -DWITH_IMGCODEC_GIF=ON \
