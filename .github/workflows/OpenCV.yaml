@@ -155,6 +155,6 @@ jobs:
       run: |
         git clone --depth=1 --branch=avif_cmake https://github.com/sturkmen72/opencv.git
         mkdir build-opencv
-        set PATH=%PATH%;D:/a/libjxl/libjxl/prefix;D:/a/libjxl/libjxl/prefix/bin;D:/a/libjxl/libjxl/prefix/lib
+        set PATH=%PATH%;D:\a\libjxl\libjxl\prefix;D:\a\libjxl\libjxl\prefix\bin;D:\a\libjxl\libjxl\prefix\lib
         cmake -Bbuild-opencv -DBUILD_PERF_TESTS=ON -DWITH_JPEGXL=ON -DWITH_ZLIB_NG=OFF -DWITH_IMGCODEC_GIF=ON -DWITH_SPNG=OFF -DWITH_JPEG=ON -DWITH_TIFF=OFF -DWITH_JASPER=OFF -DWITH_OPENEXR=OFF -DWITH_IPP=OFF -DWITH_ADE=OFF -DWITH_ITT=OFF -DBUILD_OPENJPEG=OFF -DBUILD_PROTOBUF=OFF -DBUILD_JAVA=OFF -DBUILD_opencv_apps=OFF -DBUILD_opencv_dnn=OFF -DBUILD_opencv_gapi=OFF -DBUILD_opencv_features2d=OFF -DBUILD_opencv_flann=OFF -DBUILD_opencv_video=OFF -DBUILD_opencv_ml=OFF -DBUILD_opencv_objdetect=OFF -DBUILD_opencv_photo=OFF -DBUILD_opencv_calib3d=OFF -DBUILD_opencv_stitching=OFF ./opencv
 
